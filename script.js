@@ -9,6 +9,10 @@ const cols = 9;
 const rows = 10;
 const pieceRadius = 24;
 
+// 動態設定畫布大小（多留 2 個格距作邊緣安全空間）
+canvas.width = (cols - 1) * gridSize + pieceRadius * 4;
+canvas.height = (rows - 1) * gridSize + pieceRadius * 4;
+
 let currentTurn = 'red'; // 'red' 或 'black'
 let pieces = [];
 let selected = null;
