@@ -5,18 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>象棋</title>
     <link rel="stylesheet" href="style.css">
-</head>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#f0d9b5"/>
+    </head>
 <body>
     <h1>象棋</h1>
     <div id="game-container">
         <canvas id="chessCanvas"></canvas>
         <div id="info-panel">
-        <div id="turn-indicator">輪到 紅方</div>
-        <button id="restart-button">重新開始</button>
-        <button id="undo-button">悔棋</button>
-    </div>
-
+            <div id="turn-indicator">輪到 紅方</div>
+            <button id="restart-button">重新開始</button>
+            <button id="undo-button">悔棋</button>
+        </div>
     </div>
     <script src="script.js"></script>
-</body>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+    </body>
 </html>

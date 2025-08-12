@@ -1,0 +1,21 @@
+{
+  "name": "象棋",
+  "short_name": "象棋",
+  "description": "一個經典的中國象棋遊戲",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#333333",
+  "theme_color": "#f0d9b5",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
