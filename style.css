@@ -5,13 +5,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 0;
     padding: 20px;
 }
 
 h1 {
     margin-bottom: 20px;
+    font-size: 36px;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 #game-container {
@@ -23,6 +26,8 @@ h1 {
 #chessCanvas {
     background-color: #f0d9b5; /* 棋盤底色 */
     border: 3px solid #6b4e33;
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+    border-radius: 8px;
 }
 
 #info-panel {
@@ -32,12 +37,19 @@ h1 {
     padding: 20px;
     background-color: #4a382a;
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    min-width: 160px;
 }
 
 #turn-indicator {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 20px;
+    color: #ffeb3b;
+    text-align: center;
+    padding: 8px 12px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 5px;
 }
 
 #restart-button {
@@ -48,9 +60,10 @@ h1 {
     background-color: #8b4513;
     color: white;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
 }
 
 #restart-button:hover {
     background-color: #a0522d;
+    transform: scale(1.05);
 }
