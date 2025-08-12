@@ -195,15 +195,16 @@ function canPieceAttack(piece, tx, ty) {
             return true;
 
         case '兵':
-        case '卒':
-            // 紅向下 (y+1)，黑向上 (y-1)
-            const forward = piece.color === 'red' ? 1 : -1;
-            // 向前一步（非吃子必須空格）
-            if (dx === 0 && dy === forward && !target) return true;
-            // 過河後可以左右一步（不可以後退）
-            const crossed = piece.color === 'red' ? piece.y >= 5 : piece.y <= 4;
-            if (crossed && Math.abs(dx) === 1 && dy === 0) return true;
-            return false;
+	case '卒':
+   	    // 紅向下 (y+1)，黑向上 (y-1)
+    	    const forward = piece.color === 'red' ? 1 : -1;
+   	    // 向前一步（可吃可不吃）
+   	    if (dx === 0 && dy === forward) return true;
+   	    // 過河後可以左右一步
+   	    const crossed = piece.color === 'red' ? piece.y >= 5 : piece.y <= 4;
+   	    if (crossed && Math.abs(dx) === 1 && dy === 0) return true;
+   	    return false;
+
 
         default:
             return false;
